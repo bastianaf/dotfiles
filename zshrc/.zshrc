@@ -124,6 +124,7 @@ export VISUAL=nvim
 alias vim=nvim
 alias venv="source .venv/bin/activate"
 alias cpwd='pwd | tr -d "\n" | pbcopy'
+alias cheat='glow ~/dotfiles/cheat.md 2>/dev/null || cat ~/dotfiles/cheat.md'
 
 # ── Fuzzy finder (fzf + fd) ─────────────────────────────────────────
 command -v fzf >/dev/null && source <(fzf --zsh)
