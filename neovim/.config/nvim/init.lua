@@ -70,6 +70,7 @@ vim.pack.add({
 	'https://github.com/goolord/alpha-nvim',
 	'https://github.com/rebelot/kanagawa.nvim',
 	'https://github.com/MeanderingProgrammer/render-markdown.nvim',
+	'https://github.com/echasnovski/mini.icons',
 	{ src = 'https://github.com/saghen/blink.cmp', version = vim.version.range('1.x') },
 })
 
