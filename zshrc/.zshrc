@@ -158,10 +158,6 @@ npx() {
   _load_nvm
   npx "$@"
 }
-export PATH="$PATH:$HOME/.openclaw/bin"
-
-# OpenClaw Completion
-source "/Users/flvtwhite/.openclaw/completions/openclaw.zsh"
 
 # Added by Antigravity
 export PATH="/Users/flvtwhite/.antigravity/antigravity/bin:$PATH"
