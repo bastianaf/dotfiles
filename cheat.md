@@ -76,6 +76,7 @@
 | Implementations | `g r i` |
 | Show diagnostics | `Space D` |
 | File browser (Oil) | `-` |
+| File browser (float) | `Space e` |
 | Lazygit | `Space g g` |
 | Git line history | `Space g l` |
 | Open git remote | `Space g b` |
