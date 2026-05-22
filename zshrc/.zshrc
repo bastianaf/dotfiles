@@ -105,7 +105,7 @@ export PATH=$PATH:$GOPATH/bin;
 cd ~
 
 # Created by `pipx` on 2024-06-01 00:42:37
-export PATH="$PATH:/Users/flvtwhite/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
 
 # ── History ──────────────────────────────────────────────────────────
 HISTSIZE=100000
@@ -124,7 +124,7 @@ export VISUAL=nvim
 alias vim=nvim
 alias venv="source .venv/bin/activate"
 alias cpwd='pwd | tr -d "\n" | pbcopy'
-alias cheat='glow ~/dotfiles/cheat.md 2>/dev/null || cat ~/dotfiles/cheat.md'
+alias cheat='nvim ~/dotfiles/cheat.md'
 
 # ── Fuzzy finder (fzf + fd) ─────────────────────────────────────────
 command -v fzf >/dev/null && source <(fzf --zsh)
@@ -160,10 +160,10 @@ npx() {
 }
 
 # Added by Antigravity
-export PATH="/Users/flvtwhite/.antigravity/antigravity/bin:$PATH"
+export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 
 # bun completions
-[ -s "/Users/flvtwhite/.bun/_bun" ] && source "/Users/flvtwhite/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
@@ -174,4 +174,4 @@ export PATH="/Applications/Obsidian.app/Contents/MacOS:$PATH"
 
 
 # opencode
-export PATH=/Users/flvtwhite/.opencode/bin:$PATH
+export PATH=$HOME/.opencode/bin:$PATH
