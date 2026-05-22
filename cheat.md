@@ -1,10 +1,36 @@
 # tmux (prefix: Ctrl+A)
 
+## Quick reference (most used)
+
 | Action | Keybind |
 |--------|---------|
 | Split vertical | `Ctrl+A` then `v` |
 | Split horizontal | `Ctrl+A` then `s` |
 | Navigate panes | `Ctrl+A` then `h/j/k/l` |
+| Zoom pane (full screen toggle) | `Ctrl+A` then `z` |
+| Next session | `Ctrl+A` then `)` |
+| Previous session | `Ctrl+A` then `(` |
+| Switch session (picker) | `Ctrl+A` then `s` |
+| Next window | `Ctrl+A` then `n` |
+| Previous window | `Ctrl+A` then `p` |
+| Detach session | `Ctrl+A` then `d` |
+
+## All panes
+
+| Action | Keybind |
+|--------|---------|
+| Split vertical | `Ctrl+A` then `v` |
+| Split horizontal | `Ctrl+A` then `s` |
+| Navigate panes | `Ctrl+A` then `h/j/k/l` |
+| Resize pane | `Ctrl+A` then `H/J/K/L` |
+| Zoom pane (full screen toggle) | `Ctrl+A` then `z` |
+| Close pane | `exit` or `Ctrl+D` |
+| Scroll up / copy mode | `Ctrl+A` then `[` (j/k to scroll, v/V+y to select/yank) |
+
+## All windows
+
+| Action | Keybind |
+|--------|---------|
 | New window | `Ctrl+A` then `c` |
 | Next window | `Ctrl+A` then `n` |
 | Previous window | `Ctrl+A` then `p` |
@@ -12,29 +38,29 @@
 | Swap window left | `Ctrl+A` then `←` |
 | Swap window right | `Ctrl+A` then `→` |
 | Rename window | `Ctrl+A` then `,` |
-| Close pane | `exit` or `Ctrl+D` |
-| Detach session | `Ctrl+A` then `d` |
-| Reload config | `Ctrl+A` then `r` |
-| Kill tmux | `tmux kill-server` |
-| Toggle nested tmux | `F12` |
-| Copy mode | `Ctrl+A` then `[` (v/V/C-v+y to select/yank) |
-| Scroll up | `Ctrl+A` then `[` then scroll with j/k |
-| Zoom pane (full screen) | `Ctrl+A` then `z` |
-| Resize pane | `Ctrl+A` then `H/J/K/L` |
-| List keybinds | `Ctrl+A` then `?` |
 
-## tmux sessions
+## All sessions
 
-| Action | Command |
+| Action | Keybind / Command |
 |--------|---------|
-| New session | `tmux new -s name` |
-| List sessions | `tmux ls` |
-| Switch session | `Ctrl+A` then `s` |
 | Next session | `Ctrl+A` then `)` |
 | Previous session | `Ctrl+A` then `(` |
-| Kill session | `tmux kill-session -t name` |
+| Switch session (picker) | `Ctrl+A` then `s` |
 | Rename session | `Ctrl+A` then `$` |
+| Detach session | `Ctrl+A` then `d` |
+| New session | `tmux new -s name` |
+| List sessions | `tmux ls` |
 | Reattach session | `tmux attach -t name` |
+| Kill session | `tmux kill-session -t name` |
+| Kill all sessions | `tmux kill-server` |
+
+## Other
+
+| Action | Keybind / Command |
+|--------|---------|
+| Reload config | `Ctrl+A` then `r` |
+| Toggle nested tmux | `F12` |
+| List all keybinds | `Ctrl+A` then `?` |
 
 # neovim (leader: Space)
 
