@@ -74,6 +74,9 @@ vim.pack.add({
 	{ src = 'https://github.com/saghen/blink.cmp', version = vim.version.range('1.x') },
 })
 
+-- Mini.icons (file icons everywhere)
+require('mini.icons').setup()
+
 -- Kanagawa
 require('kanagawa').setup({
 	colors = {
