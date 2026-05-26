@@ -15,7 +15,7 @@ Neovim plugins managed via `vim.pack.add()` in `neovim/.config/nvim/init.lua`.
 | [codediff.nvim](https://github.com/esmuellert/codediff.nvim) | VS Code-style diff view |
 | [lazygit.nvim](https://github.com/kdheepak/lazygit.nvim) | Git UI integration |
 | [neoscroll.nvim](https://github.com/karb94/neoscroll.nvim) | Smooth scrolling |
-| [alpha-nvim](https://github.com/goolord/alpha-nvim) | Start screen / dashboard |
+| [snacks.nvim](https://github.com/folke/snacks.nvim) | Dashboard, notifications, and quality-of-life utilities |
 | [render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim) | Markdown rendering |
 | [kanagawa.nvim](https://github.com/rebelot/kanagawa.nvim) | Color theme |
 | [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) | Git gutter markers (+/-/~ in sign column) |

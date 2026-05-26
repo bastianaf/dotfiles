@@ -67,7 +67,7 @@ vim.pack.add({
 	'https://github.com/stevearc/oil.nvim',
 	'https://github.com/kdheepak/lazygit.nvim',
 	'https://github.com/esmuellert/codediff.nvim',
-	'https://github.com/goolord/alpha-nvim',
+	'https://github.com/folke/snacks.nvim',
 	'https://github.com/rebelot/kanagawa.nvim',
 	'https://github.com/MeanderingProgrammer/render-markdown.nvim',
 	'https://github.com/echasnovski/mini.icons',
@@ -263,11 +263,11 @@ vim.keymap.set('n', '<leader>ru', '<cmd>CodeDiff<cr>', { desc = 'Code diff not s
 vim.keymap.set('n', '<leader>rm', '<cmd>CodeDiff main<cr>', { desc = 'Code diff main' })
 vim.keymap.set('n', '<leader>rh', '<cmd>CodeDiff HEAD~1<cr>', { desc = 'Code diff previous commit' })
 
--- Start screen
-local alpha = require('alpha')
-local dashboard = require('alpha.themes.dashboard')
-dashboard.section.header.val = vim.split(
-	[=[
+-- Snacks dashboard
+require('snacks').setup({
+	dashboard = {
+		preset = {
+			header = [=[
       .od88888888888888888888888888888888bo.
   .d8888888888888888888888888888888888888888b.
 .d88888888888888888888888888888888888888888888b
@@ -286,16 +286,23 @@ Y88888888888888888888888888888888888888888888888P
                   Y88888P
                     Y88P
                      YP
-    ]=], '\n', { trimempty = true })
-dashboard.section.header.opts.hl = 'String'
-dashboard.section.buttons.val = {
-	dashboard.button('f', '  Find file', '<cmd>FzfLua files<CR>'),
-	dashboard.button('r', '  Recent files', '<cmd>FzfLua oldfiles<CR>'),
-	dashboard.button('g', '  Live grep', '<cmd>FzfLua live_grep<CR>'),
-	dashboard.button('n', '  New file', '<cmd>ene<CR>'),
-	dashboard.button('l', '  Lazygit', '<cmd>LazyGit<CR>'),
-	dashboard.button('d', '  Open dotfiles', '<cmd>Oil $HOME/dotfiles<CR>'),
-	dashboard.button('q', '  Quit', '<cmd>qa<CR>'),
-}
-dashboard.section.footer.val = ''
-alpha.setup(dashboard.opts)
+                    ]=],
+			keys = {
+				{ icon = ' ', key = 'f', desc = 'Find file', action = '<cmd>FzfLua files<CR>' },
+				{ icon = ' ', key = 'r', desc = 'Recent files', action = '<cmd>FzfLua oldfiles<CR>' },
+				{ icon = ' ', key = 'g', desc = 'Live grep', action = '<cmd>FzfLua live_grep<CR>' },
+				{ icon = ' ', key = 'n', desc = 'New file', action = '<cmd>ene<CR>' },
+				{ icon = ' ', key = 'l', desc = 'Lazygit', action = '<cmd>LazyGit<CR>' },
+				{ icon = ' ', key = 'd', desc = 'Dotfiles', action = '<cmd>Oil $HOME/dotfiles<CR>' },
+				{ icon = ' ', key = 'q', desc = 'Quit', action = '<cmd>qa<CR>' },
+			},
+		},
+		sections = {
+			{ section = 'header' },
+			{ section = 'keys', gap = 1, padding = 1 },
+			{ icon = ' ', title = 'Recent files', section = 'recent_files', indent = 2, padding = 1 },
+			{ icon = ' ', title = 'Projects', section = 'projects', indent = 2, padding = 1 },
+			{ section = 'startup' },
+		},
+	},
+})
