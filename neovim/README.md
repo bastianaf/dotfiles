@@ -35,6 +35,11 @@ Minimal hand-crafted config (~240 lines) using Neovim's built-in `vim.pack.add()
 | Code diff (unstaged) | `Space r u` |
 | Code diff (vs main) | `Space r m` |
 | Code diff (vs HEAD~1) | `Space r h` |
+| Next hunk | `] c` |
+| Previous hunk | `[ c` |
+| Stage hunk | `Space h s` |
+| Reset hunk | `Space h r` |
+| Blame line | `Space h b` |
 | Copy absolute path | `Space c p` |
 | Copy relative path | `Space c r` |
 | Move between windows | `Ctrl+H/J/K/L` |

@@ -71,6 +71,8 @@ vim.pack.add({
 	'https://github.com/rebelot/kanagawa.nvim',
 	'https://github.com/MeanderingProgrammer/render-markdown.nvim',
 	'https://github.com/echasnovski/mini.icons',
+	'https://github.com/lewis6991/gitsigns.nvim',
+	'https://github.com/folke/todo-comments.nvim',
 	{ src = 'https://github.com/saghen/blink.cmp', version = vim.version.range('1.x') },
 })
 
@@ -137,6 +139,7 @@ vim.api.nvim_create_autocmd('FileType', {
 vim.lsp.enable({
 	'ruff',
 	'lua_ls',
+	'ts_ls',
 })
 vim.o.signcolumn = 'yes'
 
@@ -173,6 +176,32 @@ require('neoscroll').setup({
 	easing = 'quadratic',
 	duration_multiplier = 0.30,
 })
+
+-- Gitsigns (git gutter markers)
+require('gitsigns').setup({
+	signs = {
+		add = { text = '│' },
+		change = { text = '│' },
+		delete = { text = '_' },
+		topdelete = { text = '‾' },
+		changedelete = { text = '~' },
+	},
+	on_attach = function(bufnr)
+		local gs = package.loaded.gitsigns
+		local map = vim.keymap.set
+		map('n', ']c', gs.next_hunk, { buffer = bufnr, desc = 'Next hunk' })
+		map('n', '[c', gs.prev_hunk, { buffer = bufnr, desc = 'Previous hunk' })
+		map('n', '<leader>hs', gs.stage_hunk, { buffer = bufnr, desc = 'Stage hunk' })
+		map('n', '<leader>hr', gs.reset_hunk, { buffer = bufnr, desc = 'Reset hunk' })
+		map('n', '<leader>hS', gs.stage_buffer, { buffer = bufnr, desc = 'Stage buffer' })
+		map('n', '<leader>hp', gs.preview_hunk, { buffer = bufnr, desc = 'Preview hunk' })
+		map('n', '<leader>hb', function() gs.blame_line({ full = true }) end, { buffer = bufnr, desc = 'Blame line' })
+		map('n', '<leader>hd', gs.diffthis, { buffer = bufnr, desc = 'Diff this' })
+	end,
+})
+
+-- Todo-comments (highlight TODO/FIXME/HACK in code)
+require('todo-comments').setup({})
 
 -- Oil.nvim
 require("oil").setup({
@@ -239,21 +268,24 @@ local alpha = require('alpha')
 local dashboard = require('alpha.themes.dashboard')
 dashboard.section.header.val = vim.split(
 	[[
-          ___           ___           ___           ___
-         /  /\         /  /\         /  /\         /  /\
-        /  /:/        /  /::\       /  /::\       /  /::\
-       /  /:/        /  /:/\:\     /  /:/\:\     /  /:/\:\
-      /  /:/  ___   /  /:/~/::\   /  /:/~/:/    /  /:/~/::\
-     /  /:/  /  /\ /__/:/ /:/\:\ /__/:/ /:/___ /__/:/ /:/\:\
-    /  /:/  /  /:/ \  \:\/:/__\/ \  \:\/:::::/ \  \:\/:/~/:/
-   /__/:/  /__/:/   \  \::/       \  \::/~~~~   \  \::/ /:/
-   \  \:\  \  \/     \  \:\        \  \:\        \__\/ /:/
-    \  \:\  \         \  \:\        \  \:\         /__/:/
-     \  \:\  \         \  \:\        \  \:\        \__\/
-      \__\/\__\         \__\/         \__\/
+                ⠀⣀⣀⣀⣀⣀⣀⣀⣀⣀⡀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀
+                ⠸⣿⣿⡇⢸⣿⣿⡇⣿⣿⡇⣿⣿⡇⢸⣿⣿⡇⣿⣿⣿⠇
+                ⠀⠉⠉⠁⠈⠉⠉⠁⠉⠉⠁⠉⠉⠁⠈⠉⠉⠁⠉⠉⠉⠁
+                 ⢰⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⡆
+                 ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
+                 ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
+                 ⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇
+                 ⠘⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠃
     ]], '\n', { trimempty = true })
-dashboard.section.header.opts.hl = 'Comment'
-dashboard.section.buttons.val = {}
-dashboard.section.footer.val = 'PookieVim'
-dashboard.section.footer.opts.hl = 'Comment'
+dashboard.section.header.opts.hl = 'String'
+dashboard.section.buttons.val = {
+	dashboard.button('f', '  Find file', '<cmd>FzfLua files<CR>'),
+	dashboard.button('r', '  Recent files', '<cmd>FzfLua oldfiles<CR>'),
+	dashboard.button('g', '  Live grep', '<cmd>FzfLua live_grep<CR>'),
+	dashboard.button('n', '  New file', '<cmd>ene<CR>'),
+	dashboard.button('l', '  Lazygit', '<cmd>LazyGit<CR>'),
+	dashboard.button('d', '  Open dotfiles', '<cmd>Oil $HOME/dotfiles<CR>'),
+	dashboard.button('q', '  Quit', '<cmd>qa<CR>'),
+}
+dashboard.section.footer.val = ''
 alpha.setup(dashboard.opts)

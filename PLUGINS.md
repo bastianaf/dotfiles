@@ -18,6 +18,8 @@ Neovim plugins managed via `vim.pack.add()` in `neovim/.config/nvim/init.lua`.
 | [alpha-nvim](https://github.com/goolord/alpha-nvim) | Start screen / dashboard |
 | [render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim) | Markdown rendering |
 | [kanagawa.nvim](https://github.com/rebelot/kanagawa.nvim) | Color theme |
+| [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) | Git gutter markers (+/-/~ in sign column) |
+| [todo-comments.nvim](https://github.com/folke/todo-comments.nvim) | Highlight TODO/FIXME/HACK/WARN in comments |
 
 ## Adding a plugin
 

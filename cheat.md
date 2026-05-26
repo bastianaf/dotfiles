@@ -91,6 +91,29 @@
 | Quit nvim | `:qall` |
 | Force quit (no save) | `:q!` |
 
+## neovim git (gitsigns)
+
+| Action | Keybind |
+|--------|---------|
+| Next hunk | `] c` |
+| Previous hunk | `[ c` |
+| Stage hunk | `Space h s` |
+| Reset hunk | `Space h r` |
+| Preview hunk | `Space h p` |
+| Blame line | `Space h b` |
+| Diff this | `Space h d` |
+
+## neovim comments
+
+| What | Highlight |
+|------|-----------|
+| `TODO:` | Orange |
+| `FIXME:` | Red |
+| `HACK:` | Yellow |
+| `WARN:` | Blue |
+| `NOTE:` | Cyan |
+| `PERF:` | Purple |
+
 # ghostty
 
 | Action | Keybind |
