@@ -203,6 +203,9 @@ require('gitsigns').setup({
 -- Todo-comments (highlight TODO/FIXME/HACK in code)
 require('todo-comments').setup({})
 
+-- Dashboard
+vim.keymap.set('n', '<leader>da', function() require('snacks').dashboard() end, { desc = 'Open dashboard' })
+
 -- Oil.nvim
 require("oil").setup({
 	columns = { "icon", "mtime" },
