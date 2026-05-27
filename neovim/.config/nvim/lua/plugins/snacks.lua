@@ -9,7 +9,7 @@ return {
 						{ icon = " ", key = "r", desc = "Recent files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
 						{ icon = " ", key = "g", desc = "Live grep", action = ":lua Snacks.dashboard.pick('live_grep')" },
 						{ icon = " ", key = "n", desc = "New file", action = ":ene | startinsert" },
-						{ icon = " ", key = "l", desc = "Lazygit", action = "<cmd>LazyGit<CR>" },
+						{ icon = " ", key = "l", desc = "Lazygit", action = function() Snacks.lazygit() end },
 						{ icon = " ", key = "d", desc = "Dotfiles", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.env.HOME .. '/dotfiles'})" },
 						{ icon = " ", key = "q", desc = "Quit", action = ":qa" },
 					},
