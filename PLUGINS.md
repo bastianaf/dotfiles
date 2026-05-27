@@ -22,7 +22,6 @@ Neovim plugins managed via [lazy.nvim](https://github.com/folke/lazy.nvim) throu
 | [kanagawa.nvim](https://github.com/rebelot/kanagawa.nvim) | Color theme (replaces tokyonight) | `lua/plugins/kanagawa.lua` |
 | [blink.cmp](https://github.com/saghen/blink.cmp) | Autocomplete (replaces nvim-cmp) | `lua/plugins/blink.lua` |
 | [codediff.nvim](https://github.com/esmuellert/codediff.nvim) | VS Code-style diff view | `lua/plugins/codediff.lua` |
-| [neoscroll.nvim](https://github.com/karb94/neoscroll.nvim) | Smooth scrolling | `lua/plugins/neoscroll.lua` |
 | [oil.nvim](https://github.com/stevearc/oil.nvim) | File browser (alongside neo-tree) | `lua/plugins/oil.lua` |
 
 ## Managing plugins
