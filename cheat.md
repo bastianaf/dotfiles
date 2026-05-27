@@ -89,7 +89,7 @@ Press `Space` and wait — **which-key** shows all options:
 | Show diagnostics float | `Space D` |
 | Open dashboard | `Space d a` |
 | File browser (Oil) | `-` |
-| Oil float window | `Space e` |
+| File tree sidebar (neo-tree) | `Space e` |
 | Code diff (unstaged) | `Space r u` |
 | Code diff (vs main) | `Space r m` |
 | Code diff (vs HEAD~1) | `Space r h` |

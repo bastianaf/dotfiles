@@ -24,7 +24,6 @@ end, { desc = "Open dashboard" })
 
 -- Oil file browser
 map("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
-map("n", "<leader>e", "<CMD>Oil --float<CR>", { desc = "Oil file browser (float)" })
 
 -- Codediff (VS Code-style diffs)
 map("n", "<leader>ru", "<cmd>CodeDiff<cr>", { desc = "Code diff not staged" })
