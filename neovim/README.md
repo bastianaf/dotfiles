@@ -1,65 +1,85 @@
 # neovim
 
-Minimal hand-crafted config (~240 lines) using Neovim's built-in `vim.pack.add()` package manager. Based on [Wout Vossen's pookie-dotfiles](https://github.com/vossenwout/pookie-dotfiles).
+[LazyVim](https://www.lazyvim.org/)-based configuration with [lazy.nvim](https://github.com/folke/lazy.nvim) as plugin manager.
 
-## Core settings
+## Structure
+
+```
+neovim/.config/nvim/
+├── init.lua                  → LazyVim bootstrap
+├── lua/
+│   ├── config/
+│   │   ├── lazy.lua          → LazyVim core (kept as-is)
+│   │   ├── options.lua       → custom vim options
+│   │   ├── keymaps.lua       → custom keybinds
+│   │   └── autocmds.lua      → custom autocmds
+│   └── plugins/
+│       ├── kanagawa.lua      → theme override
+│       ├── blink.lua         → autocomplete override
+│       ├── codediff.lua      → VS Code-style diffs
+│       ├── neoscroll.lua     → smooth scrolling
+│       ├── oil.lua           → file browser
+│       ├── snacks.lua        → dashboard (header + logo + keys)
+│       └── gitsigns.lua      → git gutter markers
+```
+
+## Core settings (overrides)
 
 | Setting | Value |
 |---------|-------|
-| Leader key | `Space` |
 | Line numbers | Relative + absolute |
 | Search | Case-insensitive (smartcase) |
 | Clipboard | Synced with system clipboard |
 | Swap files | Disabled |
-| Auto-format on save | Enabled (via LSP) |
-| Theme | Kanagawa Wave |
+| Theme | Kanagawa Wave (overrides tokyonight) |
+| Autocomplete | blink.cmp (replaces nvim-cmp) |
 
-## Keybinds
+## Custom keybinds
 
 | Action | Keybind |
 |--------|---------|
-| Find files | `Space Space` |
-| Search in project | `Space /` |
-| Resume last picker | `Space f r` |
-| Switch buffers | `Space ,` |
-| Go to definition | `g d` |
-| Find references | `g r r` |
-| Code actions | `g r a` |
-| Implementations | `g r i` |
+| Copy absolute path | `Space c p` |
+| Copy relative path | `Space c r` |
 | Show diagnostics | `Space D` |
+| Open dashboard | `Space d a` |
 | File browser (Oil) | `-` |
-| File browser (float) | `Space e` |
-| Lazygit | `Space g g` |
-| Git line history | `Space g l` |
-| Open git remote | `Space g b` |
+| Oil float | `Space e` |
 | Code diff (unstaged) | `Space r u` |
 | Code diff (vs main) | `Space r m` |
 | Code diff (vs HEAD~1) | `Space r h` |
-| Next hunk | `] c` |
-| Previous hunk | `[ c` |
-| Stage hunk | `Space h s` |
-| Reset hunk | `Space h r` |
-| Blame line | `Space h b` |
-| Copy absolute path | `Space c p` |
-| Copy relative path | `Space c r` |
-| Move between windows | `Ctrl+H/J/K/L` |
-| Quit file (keep nvim) | `:bd` |
+| Open git remote (browser) | `Space g b` |
+| Git line history | `Space g l` |
 
-## LSP servers
+## LazyVim keybind cheatsheet
+
+Press `Space` and wait — **which-key** shows all available keybinds:
+
+| Category | Prefix |
+|----------|--------|
+| Files | `Space f` |
+| Search | `Space s` |
+| Git | `Space g` |
+| Buffer/Tab | `Space b` |
+| Window | `Space w` |
+| Debug | `Space d` |
+| Code/LSP | `Space c` |
+| Toggle UI | `Space u` |
+
+## Plugin management
 
 ```bash
-# Python
-brew install ruff
-
-# Lua
-brew install lua-language-server
-
-# TypeScript
-npm i -g typescript-language-server typescript
+:Lazy           # plugin UI
+:Lazy sync      # sync all plugins
+:Lazy clean     # remove unused plugins
 ```
 
-Add new servers to `vim.lsp.enable({})` in `init.lua`.
+## Adding plugins
+
+1. Create `lua/plugins/new-plugin.lua`
+2. Add to [PLUGINS.md](../PLUGINS.md)
+3. Restart nvim or run `:Lazy sync`
 
 ## See also
 
-- [PLUGINS.md](../PLUGINS.md) — full plugin list with descriptions
+- [PLUGINS.md](../PLUGINS.md) — full plugin list
+- [cheat.md](../cheat.md) — all keybinds (tmux + nvim + ghostty)

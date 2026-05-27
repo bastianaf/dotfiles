@@ -64,55 +64,51 @@
 
 # neovim (leader: Space)
 
+## LazyVim keybind groups
+
+Press `Space` and wait — **which-key** shows all options:
+
+| Category | Prefix | Includes |
+|----------|--------|---------|
+| Find files | `Space f` | fuzzy find, recent, grep, buffers |
+| Search | `Space s` | grep, word under cursor, search/replace |
+| Git | `Space g` | blame, log, lazygit, diff |
+| Code/LSP | `Space c` | actions, rename, diagnostics, format |
+| Window | `Space w` | split, navigate, resize |
+| Buffer/Tab | `Space b` | next, prev, close, pin |
+| Debug | `Space d` | breakpoints, step, continue |
+| UI toggles | `Space u` | explorer, terminal, outline |
+| Session | `Space S` | save, load, restore |
+
+## Custom keybinds (our additions)
+
 | Action | Keybind |
 |--------|---------|
-| Find files | `Space Space` |
-| Search in project | `Space /` |
-| Resume last picker | `Space f r` |
-| Switch buffers | `Space ,` |
-| Go to definition | `g d` |
-| Find references | `g r r` |
-| Code actions | `g r a` |
-| Implementations | `g r i` |
-| Show diagnostics | `Space D` |
+| Copy absolute path | `Space c p` |
+| Copy relative path | `Space c r` |
+| Show diagnostics float | `Space D` |
+| Open dashboard | `Space d a` |
 | File browser (Oil) | `-` |
-| File browser (float) | `Space e` |
-| Lazygit | `Space g g` |
-| Git line history | `Space g l` |
-| Open git remote | `Space g b` |
+| Oil float window | `Space e` |
 | Code diff (unstaged) | `Space r u` |
 | Code diff (vs main) | `Space r m` |
 | Code diff (vs HEAD~1) | `Space r h` |
-| Copy absolute path | `Space c p` |
-| Copy relative path | `Space c r` |
-| Move between windows | `Ctrl+H/J/K/L` |
-| Save file | `:w` |
-| Quit file (keep nvim) | `:bd` |
-| Quit nvim | `:qall` |
-| Force quit (no save) | `:q!` |
-
-## neovim git (gitsigns)
-
-| Action | Keybind |
-|--------|---------|
-| Next hunk | `] c` |
-| Previous hunk | `[ c` |
+| Open git remote (browser) | `Space g b` |
+| Git line history | `Space g l` |
 | Stage hunk | `Space h s` |
 | Reset hunk | `Space h r` |
 | Preview hunk | `Space h p` |
 | Blame line | `Space h b` |
 | Diff this | `Space h d` |
 
-## neovim comments
+## neovim basics
 
-| What | Highlight |
-|------|-----------|
-| `TODO:` | Orange |
-| `FIXME:` | Red |
-| `HACK:` | Yellow |
-| `WARN:` | Blue |
-| `NOTE:` | Cyan |
-| `PERF:` | Purple |
+| Action | Keybind |
+|--------|---------|
+| Save file | `:w` |
+| Quit file (keep nvim) | `:bd` |
+| Quit nvim | `:qall` |
+| Force quit | `:q!` |
 
 # ghostty
 

@@ -2,6 +2,8 @@
 
 Personal configuration for neovim, tmux, ghostty, and zsh. Managed with [GNU Stow](https://www.gnu.org/software/stow/).
 
+**Neovim is [LazyVim](https://www.lazyvim.org/)-based** with [lazy.nvim](https://github.com/folke/lazy.nvim) as plugin manager.
+
 ## Structure
 
 ```
@@ -18,6 +20,7 @@ dotfiles/
 
 ```bash
 brew install stow neovim tmux fzf fd ripgrep lazygit lua-language-server glow ruff
+brew install TheZoraiz/ascii-image-converter/ascii-image-converter
 brew install --cask font-jetbrains-mono-nerd-font
 ```
 
@@ -29,9 +32,17 @@ cd ~/dotfiles
 stow neovim tmux ghostty zshrc
 ```
 
-If `~/.zshrc` already exists on a new machine:
+First nvim launch will auto-install all plugins via lazy.nvim.
+
+If `~/.zshrc` already exists:
 ```bash
 stow --adopt zshrc
+```
+
+## Updating plugins
+
+```
+:Lazy sync    # inside nvim
 ```
 
 ## Adding a new config

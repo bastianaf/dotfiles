@@ -1,28 +1,40 @@
 # PLUGINS.md
 
-Neovim plugins managed via `vim.pack.add()` in `neovim/.config/nvim/init.lua`.
+Neovim plugins managed via [lazy.nvim](https://github.com/folke/lazy.nvim) through [LazyVim](https://www.lazyvim.org/).
 
-## Current plugins
+## LazyVim defaults (30+ plugins included)
 
-| Plugin | Purpose |
-|--------|---------|
-| [fzf-lua](https://github.com/ibhagwan/fzf-lua) | Fuzzy finder — files, grep, buffers, LSP references |
-| [blink.cmp](https://github.com/saghen/blink.cmp) | Autocomplete with signature help |
-| [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) | Syntax highlighting |
-| [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) | Language server protocol |
-| [mini.icons](https://github.com/echasnovski/mini.icons) | File/type icons |
-| [oil.nvim](https://github.com/stevearc/oil.nvim) | File browser |
-| [codediff.nvim](https://github.com/esmuellert/codediff.nvim) | VS Code-style diff view |
-| [lazygit.nvim](https://github.com/kdheepak/lazygit.nvim) | Git UI integration |
-| [neoscroll.nvim](https://github.com/karb94/neoscroll.nvim) | Smooth scrolling |
-| [snacks.nvim](https://github.com/folke/snacks.nvim) | Dashboard, notifications, and quality-of-life utilities |
-| [render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim) | Markdown rendering |
-| [kanagawa.nvim](https://github.com/rebelot/kanagawa.nvim) | Color theme |
-| [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) | Git gutter markers (+/-/~ in sign column) |
-| [todo-comments.nvim](https://github.com/folke/todo-comments.nvim) | Highlight TODO/FIXME/HACK/WARN in comments |
+| Category | Key plugins |
+|----------|------------|
+| LSP | mason.nvim, nvim-lspconfig, null-ls |
+| Completion | nvim-cmp (overridden by blink.cmp) |
+| Fuzzy finder | fzf-lua |
+| Treesitter | nvim-treesitter |
+| Git | gitsigns.nvim, lazygit.nvim |
+| UI | lualine.nvim, bufferline.nvim, which-key.nvim, noice.nvim |
+| Editor | neo-tree.nvim, mini.surround, mini.pairs, mini.ai, todo-comments.nvim |
+| Terminal | snacks.nvim (dashboard, notifications, etc.) |
+
+## Custom additions
+
+| Plugin | Purpose | File |
+|--------|---------|------|
+| [kanagawa.nvim](https://github.com/rebelot/kanagawa.nvim) | Color theme (replaces tokyonight) | `lua/plugins/kanagawa.lua` |
+| [blink.cmp](https://github.com/saghen/blink.cmp) | Autocomplete (replaces nvim-cmp) | `lua/plugins/blink.lua` |
+| [codediff.nvim](https://github.com/esmuellert/codediff.nvim) | VS Code-style diff view | `lua/plugins/codediff.lua` |
+| [neoscroll.nvim](https://github.com/karb94/neoscroll.nvim) | Smooth scrolling | `lua/plugins/neoscroll.lua` |
+| [oil.nvim](https://github.com/stevearc/oil.nvim) | File browser (alongside neo-tree) | `lua/plugins/oil.lua` |
+
+## Managing plugins
+
+```bash
+:Lazy           # open lazy.nvim UI to see all plugins, update, clean
+:Lazy update    # update all plugins
+:Lazy sync      # sync and update all plugins
+```
 
 ## Adding a plugin
 
-1. Add the GitHub URL to `vim.pack.add({})` in `neovim/.config/nvim/init.lua`
-2. Add a row to the table above with a brief description
+1. Create `lua/plugins/my-plugin.lua` with the plugin spec
+2. Add a row to the table above
 3. Commit and push both files
