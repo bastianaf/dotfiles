@@ -47,8 +47,6 @@ neovim/.config/nvim/
 | Code diff (unstaged) | `Space r u` |
 | Code diff (vs main) | `Space r m` |
 | Code diff (vs HEAD~1) | `Space r h` |
-| Open git remote (browser) | `Space g b` |
-| Git line history | `Space g l` |
 
 ## LazyVim keybind cheatsheet
 

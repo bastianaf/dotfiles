@@ -93,8 +93,6 @@ Press `Space` and wait — **which-key** shows all options:
 | Code diff (unstaged) | `Space r u` |
 | Code diff (vs main) | `Space r m` |
 | Code diff (vs HEAD~1) | `Space r h` |
-| Open git remote (browser) | `Space g o` |
-| Git line history | `Space g h` |
 | Stage hunk | `Space h s` |
 | Reset hunk | `Space h r` |
 | Preview hunk | `Space h p` |
