@@ -1,16 +1,44 @@
 return {
 	{
 		"folke/snacks.nvim",
-		opts = {
-			dashboard = {
+		opts = function(_, opts)
+			opts.dashboard = {
 				preset = {
 					keys = {
-						{ icon = " ", key = "f", desc = "Find file", action = "<cmd>FzfLua files<CR>" },
-						{ icon = " ", key = "r", desc = "Recent files", action = "<cmd>FzfLua oldfiles<CR>" },
-						{ icon = " ", key = "g", desc = "Live grep", action = "<cmd>FzfLua live_grep<CR>" },
+						{
+							icon = " ",
+							key = "f",
+							desc = "Find file",
+							action = function()
+								require("fzf-lua").files()
+							end,
+						},
+						{
+							icon = " ",
+							key = "r",
+							desc = "Recent files",
+							action = function()
+								require("fzf-lua").oldfiles()
+							end,
+						},
+						{
+							icon = " ",
+							key = "g",
+							desc = "Live grep",
+							action = function()
+								require("fzf-lua").live_grep()
+							end,
+						},
 						{ icon = " ", key = "n", desc = "New file", action = "<cmd>ene<CR>" },
 						{ icon = " ", key = "l", desc = "Lazygit", action = "<cmd>LazyGit<CR>" },
-						{ icon = " ", key = "d", desc = "Dotfiles", action = "<cmd>Oil $HOME/dotfiles<CR>" },
+						{
+							icon = " ",
+							key = "d",
+							desc = "Dotfiles",
+							action = function()
+								require("oil").open(vim.env.HOME .. "/dotfiles")
+							end,
+						},
 						{ icon = " ", key = "q", desc = "Quit", action = "<cmd>qa<CR>" },
 					},
 				},
@@ -27,7 +55,7 @@ return {
 						height = 30,
 					},
 				},
-			},
-		},
+			}
+		end,
 	},
 }
