@@ -19,10 +19,11 @@ Neovim plugins managed via [lazy.nvim](https://github.com/folke/lazy.nvim) throu
 
 | Plugin | Purpose | File |
 |--------|---------|------|
-| [kanagawa.nvim](https://github.com/rebelot/kanagawa.nvim) | Color theme (replaces tokyonight) | `lua/plugins/kanagawa.lua` |
+| [catppuccin/nvim](https://github.com/catppuccin/nvim) | Color theme (Catppuccin Mocha) | `lua/plugins/catppuccin.lua` |
 | [blink.cmp](https://github.com/saghen/blink.cmp) | Autocomplete (replaces nvim-cmp) | `lua/plugins/blink.lua` |
 | [codediff.nvim](https://github.com/esmuellert/codediff.nvim) | VS Code-style diff view | `lua/plugins/codediff.lua` |
 | [oil.nvim](https://github.com/stevearc/oil.nvim) | File browser (alongside neo-tree) | `lua/plugins/oil.lua` |
+| [opencode.nvim](https://github.com/NickvanDyke/opencode.nvim) | OpenCode integration in neovim | `lua/plugins/opencode.lua` |
 
 ## Managing plugins
 

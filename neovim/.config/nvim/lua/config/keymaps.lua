@@ -1,6 +1,9 @@
 -- Custom keymaps (on top of LazyVim defaults)
 local map = vim.keymap.set
 
+-- jj to exit insert mode (like Esc, but faster)
+map("i", "jj", "<Esc>", { desc = "Exit insert mode" })
+
 -- Copy paths to clipboard
 map("n", "<leader>cp", function()
 	local path = vim.fn.expand("%:p")

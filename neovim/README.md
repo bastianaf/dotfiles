@@ -31,7 +31,7 @@ neovim/.config/nvim/
 | Search | Case-insensitive (smartcase) |
 | Clipboard | Synced with system clipboard |
 | Swap files | Disabled |
-| Theme | Kanagawa Wave (overrides tokyonight) |
+| Theme | Catppuccin Mocha (overrides tokyonight) |
 | Autocomplete | blink.cmp (replaces nvim-cmp) |
 
 ## Custom keybinds

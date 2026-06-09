@@ -125,6 +125,45 @@ alias vim=nvim
 alias venv="source .venv/bin/activate"
 alias cpwd='pwd | tr -d "\n" | pbcopy'
 alias cheat='nvim ~/dotfiles/cheat.md'
+alias cl='clear'
+
+# Modern CLI replacements
+alias cat=bat
+alias la=tree
+alias lt="eza --tree --level=2 --long --icons --git"
+alias l="eza -l --icons --git -a"
+
+# Git
+alias gc="git commit -m"
+alias gca="git commit -a -m"
+alias gp="git push origin HEAD"
+alias gpu="git pull origin"
+alias gst="git status"
+alias glog="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit"
+alias gdiff="git diff"
+alias gco="git checkout"
+alias gb='git branch'
+alias gba='git branch -a'
+alias gadd='git add'
+alias ga='git add -p'
+alias gcoall='git checkout -- .'
+alias gre='git reset'
+
+# Navigation
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+
+# Docker
+alias dco="docker compose"
+alias dps="docker ps"
+alias dx="docker exec -it"
+
+# Functions
+cx() { cd "$@" && l; }
+fcd() { cd "$(find . -type d -not -path '*/.*' | fzf)" && l; }
+f() { echo "$(find . -type f -not -path '*/.*' | fzf)" | pbcopy }
+fv() { nvim "$(find . -type f -not -path '*/.*' | fzf)" }
 
 # ── Fuzzy finder (fzf + fd) ─────────────────────────────────────────
 command -v fzf >/dev/null && source <(fzf --zsh)
@@ -175,3 +214,6 @@ export PATH="/Applications/Obsidian.app/Contents/MacOS:$PATH"
 
 # opencode
 export PATH=$HOME/.opencode/bin:$PATH
+
+# zoxide (smart cd)
+eval "$(zoxide init zsh)"
