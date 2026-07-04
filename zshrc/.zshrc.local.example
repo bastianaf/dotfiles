@@ -1,0 +1,14 @@
+# ~/.zshrc.local — machine-specific overrides, NOT synced.
+#
+# How to apply on a new machine:
+#   1. cp ~/dotfiles/zshrc/.zshrc.local.example ~/.zshrc.local
+#   2. Uncomment/edit the lines this machine needs.
+#   3. `exec zsh` (or open a new terminal).
+#
+# This file is sourced at the end of ~/.zshrc, so it can override anything
+# above. Keep host-specific absolute paths and tool-only-some-machines-have
+# entries here; everything generic stays in the synced ~/.zshrc.
+
+# Example machine-specific entries (uncomment what applies):
+# export PATH="$HOME/.antigravity/antigravity/bin:$PATH"   # Antigravity (this Mac)
+# export PATH="$PATH:/Applications/Obsidian.app/Contents/MacOS"  # Obsidian CLI

@@ -27,6 +27,6 @@ mouse-hide-while-typing = true
 macos-titlebar-proxy-icon = hidden
 title = " "
 
-custom-shader = ~/.config/ghostty/shaders/cursor.glsl
+macos-icon = glass
 
 clipboard-write = allow

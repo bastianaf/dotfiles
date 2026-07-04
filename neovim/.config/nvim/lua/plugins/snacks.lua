@@ -18,16 +18,26 @@ return {
 					{ section = "header" },
 					{ section = "keys", gap = 1, padding = 1 },
 					{ icon = " ", title = "Recent files", section = "recent_files", indent = 2, padding = 1 },
-					{
-						section = "terminal",
-						cmd = "echo ' ' && echo ' ' && echo ' ' && ascii-image-converter ~/.config/logo.png -c --complex",
-						random = 10,
-						pane = 2,
-						indent = 4,
-						height = 30,
-					},
 				},
 			},
 		},
+	},
+	{
+		-- Only add the logo terminal pane when the unsynced logo image is
+		-- present, so fresh machines don't error on dashboard.
+		"folke/snacks.nvim",
+		opts = function(_, opts)
+			local logo = vim.env.HOME .. "/.config/logo.png"
+			if vim.uv.fs_stat(logo) then
+				table.insert(opts.dashboard.sections, {
+					section = "terminal",
+					cmd = "echo ' ' && echo ' ' && echo ' ' && ascii-image-converter " .. logo .. " -c --complex",
+					random = 10,
+					pane = 2,
+					indent = 4,
+					height = 30,
+				})
+			end
+		end,
 	},
 }

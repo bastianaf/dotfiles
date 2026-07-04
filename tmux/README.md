@@ -5,7 +5,7 @@
 | Setting | Value |
 |---------|-------|
 | Prefix key | `Ctrl+A` |
-| Theme | Kanagawa |
+| Theme | Catppuccin Mocha |
 | Terminal | `tmux-256color` |
 
 ## Keybinds (prefix: Ctrl+A)
